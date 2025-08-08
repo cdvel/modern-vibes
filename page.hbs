@@ -8,6 +8,10 @@
 
             {{#if custom_excerpt}}
                 <p class="page-excerpt">{{custom_excerpt}}</p>
+            {{else}}
+                {{#if excerpt}}
+                    <p class="page-excerpt">{{excerpt}}</p>
+                {{/if}}
             {{/if}}
         </header>
 

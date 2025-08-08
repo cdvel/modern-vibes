@@ -284,7 +284,7 @@ a:has(img) {
   display: flex;
   gap: var(--space-md);
   align-items: stretch;
-  min-height: 80px;
+  min-height: 120px;
 }
 
 .posts-container.list-layout .post-image {
@@ -309,10 +309,10 @@ a:has(img) {
 
 .posts-container.list-layout .post-content {
   flex: 1;
-  padding: var(--space-xs) var(--space-sm);
+  padding: var(--space-sm);
   display: flex;
   flex-direction: column;
-  min-height: 80px;
+  min-height: 120px;
 }
 
 /* Post Cards
@@ -342,7 +342,7 @@ a:has(img) {
 /* Default thumbnail for posts without images */
 .post-image-placeholder {
   width: 100%;
-  height: 120px;
+  height: 160px;
   background: linear-gradient(135deg, var(--color-highlight) 0%, var(--color-accent) 100%);
   display: flex;
   align-items: center;
@@ -362,7 +362,7 @@ a:has(img) {
 
 .post-feature-image {
   width: 100%;
-  height: 120px;
+  height: 160px;
   object-fit: cover;
   object-position: center;
   transition: transform var(--transition-normal);
@@ -373,7 +373,7 @@ a:has(img) {
 }
 
 .post-content {
-  padding: var(--space-xs) var(--space-md) var(--space-xs);
+  padding: var(--space-sm) var(--space-md) var(--space-sm);
   display: flex;
   flex-direction: column;
   height: 100%;

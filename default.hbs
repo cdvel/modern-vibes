@@ -73,10 +73,10 @@
                             <a href="{{@site.url}}/notes/" class="nav-link {{#is "tag" slug="notes"}}current{{/is}}">Notes</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{@site.url}}/about/" class="nav-link {{#post}}{{#if (match slug "about")}}current{{/if}}{{/post}}">About</a>
+                            <a href="{{@site.url}}/about/" class="nav-link {{#is "page" slug="about"}}current{{/is}}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{@site.url}}/now/" class="nav-link {{#post}}{{#if (match slug "now")}}current{{/if}}{{/post}}">Now</a>
+                            <a href="{{@site.url}}/now/" class="nav-link {{#is "page" slug="now"}}current{{/is}}">Now</a>
                         </li>
                     </ul>
                 </nav>
