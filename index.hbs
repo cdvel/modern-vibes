@@ -1,0 +1,129 @@
+{{!< default}}
+
+<div class="container">
+    <section class="blog-section">
+        {{!-- View Toggle --}}
+        <div class="view-controls">
+            <button class="view-toggle grid-view active" data-view="grid" aria-label="Grid view">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11-11h7v7h-7V3zm0 11h7v7h-7v-7z"/>
+                </svg>
+            </button>
+            <button class="view-toggle list-view" data-view="list" aria-label="List view">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                </svg>
+            </button>
+        </div>
+
+        {{!-- Posts Grid/List --}}
+        <div class="posts-container grid-layout" id="posts-container">
+            {{#foreach posts}}
+                <article class="post-card" data-post-id="{{id}}">
+                    <div class="post-image">
+                        <a href="{{url}}">
+                            {{#if feature_image}}
+                                <img src="{{img_url feature_image size="m"}}" 
+                                     alt="{{title}}" 
+                                     loading="lazy"
+                                     class="post-feature-image">
+                            {{else}}
+                                <div class="post-image-placeholder" title="{{title}}"></div>
+                            {{/if}}
+                        </a>
+                    </div>
+                    
+                    <div class="post-content">
+                        <header class="post-header">
+                            {{#if primary_tag}}
+                                <span class="post-tag">{{primary_tag.name}}</span>
+                            {{/if}}
+                            
+                            <h2 class="post-title">
+                                <a href="{{url}}">{{title}}</a>
+                            </h2>
+                            
+                            <div class="post-meta">
+                                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
+                                    {{date format="MMM DD, YYYY"}}
+                                </time>
+                                {{#if reading_time}}<span class="post-reading-time">{{reading_time}}</span>{{/if}}
+                            </div>
+                        </header>
+                        
+                        <div class="post-excerpt">
+                            <p>
+                                {{#if excerpt}}
+                                    {{excerpt words="30"}}
+                                {{else}}
+                                    {{#if custom_excerpt}}
+                                        {{custom_excerpt}}
+                                    {{else}}
+                                        Read more about {{title}}...
+                                    {{/if}}
+                                {{/if}}
+                            </p>
+                        </div>
+                        
+                        <footer class="post-footer">
+                            <a href="{{url}}" class="read-more">Read more →</a>
+                        </footer>
+                    </div>
+                </article>
+            {{/foreach}}
+        </div>
+
+        {{!-- Load More Button --}}
+        {{#if pagination.next}}
+            <div class="load-more-container">
+                <button class="load-more-btn" 
+                        data-next-page="{{pagination.next}}"
+                        id="load-more-btn">
+                    Load More Posts
+                </button>
+                <div class="loading-spinner hidden" id="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        {{/if}}
+    </section>
+
+    {{!-- Subscribe Section --}}
+    <section class="subscribe-section">
+        <div class="subscribe-container">
+            <div class="subscribe-content">
+                <h3 class="subscribe-title">Stay updated</h3>
+                <p class="subscribe-description">Get the latest posts delivered right to your inbox.</p>
+                
+                {{!-- Ghost Native Subscribe Form --}}
+                <div class="subscribe-form-container">
+                    {{#if @member}}
+                        <p class="subscribe-success">Thanks for subscribing!</p>
+                    {{else}}
+                        <form class="subscribe-form" data-members-form="subscribe">
+                            <div class="form-group">
+                                <input class="subscribe-email" 
+                                       type="email" 
+                                       name="email" 
+                                       placeholder="Your email address" 
+                                       required>
+                                <button class="subscribe-btn" type="submit">
+                                    <span class="subscribe-btn-content">Subscribe</span>
+                                    <span class="subscribe-btn-loader hidden">
+                                        <div class="btn-spinner"></div>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="subscribe-success hidden">
+                                <p>Great! Check your inbox and click the link to confirm your subscription.</p>
+                            </div>
+                            <div class="subscribe-error hidden">
+                                <p>Please enter a valid email address!</p>
+                            </div>
+                        </form>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

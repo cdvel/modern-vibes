@@ -1,0 +1,39 @@
+{{!< default}}
+
+<div class="container">
+    <header class="author-header">
+        {{#if profile_image}}
+            <div class="author-image">
+                <img src="{{img_url profile_image size="l"}}" alt="{{name}}">
+            </div>
+        {{/if}}
+        
+        <div class="author-info">
+            <h1 class="author-name">{{name}}</h1>
+            {{#if bio}}
+                <p class="author-bio">{{bio}}</p>
+            {{/if}}
+            
+            <div class="author-meta">
+                {{#if location}}
+                    <span class="author-location">📍 {{location}}</span>
+                {{/if}}
+                {{#if website}}
+                    <a href="{{website}}" class="author-website" target="_blank" rel="noopener">🌐 Website</a>
+                {{/if}}
+            </div>
+        </div>
+    </header>
+
+    <section class="author-posts">
+        <h2>Posts by {{name}}</h2>
+        
+        <div class="posts-container grid-layout">
+            {{#foreach posts}}
+                {{> "post-card"}}
+            {{/foreach}}
+        </div>
+
+        {{pagination}}
+    </section>
+</div>

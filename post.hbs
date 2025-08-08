@@ -1,0 +1,144 @@
+{{!< default}}
+
+<div class="container">
+    {{!-- Table of Contents --}}
+    <div class="toc-container">
+        <div class="toc" id="toc"></div>
+    </div>
+    
+    {{#post}}
+    <article class="post">
+        <header class="post-full-header">
+            {{#if primary_tag}}
+                <section class="post-full-tags">
+                    <a href="{{primary_tag.url}}" class="post-tag">{{primary_tag.name}}</a>
+                </section>
+            {{/if}}
+
+            <h1 class="post-full-title">{{title}}</h1>
+
+            {{#if custom_excerpt}}
+                <p class="post-full-custom-excerpt">{{custom_excerpt}}</p>
+            {{/if}}
+
+            <div class="post-full-meta">
+                <div class="post-full-meta-date">
+                    <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
+                        {{date format="D MMMM YYYY"}}
+                    </time>
+                </div>
+                {{#if reading_time}}<span class="post-full-meta-length">{{reading_time}}</span>{{/if}}
+            </div>
+        </header>
+
+        {{#if feature_image}}
+            <figure class="post-full-image">
+                <img src="{{img_url feature_image size="xl"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
+        {{/if}}
+
+        <section class="post-full-content">
+            <div class="post-content js-toc-content">
+                {{content}}
+            </div>
+        </section>
+
+        {{#if tags}}
+            <footer class="post-full-footer">
+                <section class="post-full-footer-tags">
+                    <h4 class="post-full-footer-tags-title">Tags</h4>
+                    <div class="post-tags">
+                        {{#foreach tags}}
+                            <a href="{{url}}" class="post-tag" title="{{name}}">{{name}}</a>
+                        {{/foreach}}
+                    </div>
+                </section>
+            </footer>
+        {{/if}}
+    </article>
+
+    {{!-- Comments section (if using Disqus or similar) --}}
+    <section class="post-full-comments">
+        <div id="disqus_thread"></div>
+    </section>
+
+    {{!-- Related posts --}}
+    {{#if primary_tag}}
+        {{#get "posts" filter="tag:{{primary_tag.slug}}" limit="4" as |related_posts|}}
+            {{#if related_posts}}
+                <aside class="read-next">
+                    <div class="read-next-header">
+                        <h3>You might also like</h3>
+                    </div>
+                    <div class="read-next-posts">
+                        {{#foreach related_posts}}
+                            {{#if @index}}
+                                <article class="read-next-card">
+                                    {{#if feature_image}}
+                                        <div class="read-next-card-image">
+                                            <a href="{{url}}">
+                                                <img src="{{img_url feature_image size="s"}}" alt="{{title}}">
+                                            </a>
+                                        </div>
+                                    {{/if}}
+                                    <div class="read-next-card-content">
+                                        <h4 class="read-next-card-title">
+                                            <a href="{{url}}">{{title}}</a>
+                                        </h4>
+                                        <div class="read-next-card-meta">
+                                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
+                                            <span>{{reading_time}}</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            {{/if}}
+                        {{/foreach}}
+                    </div>
+                </aside>
+            {{/if}}
+        {{/get}}
+    {{/if}}
+
+    {{!-- Subscribe Section --}}
+    <section class="subscribe-section post-subscribe">
+        <div class="subscribe-container">
+            <div class="subscribe-content">
+                <h3 class="subscribe-title">Never miss a post</h3>
+                <p class="subscribe-description">Stay updated with new content delivered to your inbox.</p>
+                
+                {{!-- Ghost Native Subscribe Form --}}
+                <div class="subscribe-form-container">
+                    {{#if @member}}
+                        <p class="subscribe-success">Thanks for subscribing!</p>
+                    {{else}}
+                        <form class="subscribe-form" data-members-form="subscribe">
+                            <div class="form-group">
+                                <input class="subscribe-email" 
+                                       type="email" 
+                                       name="email" 
+                                       placeholder="Your email address" 
+                                       required>
+                                <button class="subscribe-btn" type="submit">
+                                    <span class="subscribe-btn-content">Subscribe</span>
+                                    <span class="subscribe-btn-loader hidden">
+                                        <div class="btn-spinner"></div>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="subscribe-success hidden">
+                                <p>Great! Check your inbox and click the link to confirm your subscription.</p>
+                            </div>
+                            <div class="subscribe-error hidden">
+                                <p>Please enter a valid email address!</p>
+                            </div>
+                        </form>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </section>
+    {{/post}}
+</div>

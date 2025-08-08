@@ -1,0 +1,35 @@
+{
+  "name": "modern-personal-theme",
+  "description": "A clean, sleek, and modern Ghost theme for personal sites with grid/list toggle and lazy loading",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Modern Personal Theme",
+    "email": "hello@example.com"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "personal",
+    "blog",
+    "modern",
+    "clean"
+  ],
+  "config": {
+    "posts_per_page": 9,
+    "custom": {
+      "navigation_layout": {
+        "type": "select",
+        "options": ["Logo on the left", "Logo in the center"],
+        "default": "Logo on the left"
+      },
+      "show_publication_cover": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  }
+}

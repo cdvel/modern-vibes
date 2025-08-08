@@ -1,0 +1,54 @@
+{{!< default}}
+
+<div class="container">
+    <article class="post">
+        <header class="post-full-header">
+            <h1>Debug Template</h1>
+        </header>
+
+        <section class="debug-content">
+            <h2>Available Variables:</h2>
+            
+            <h3>Basic Properties:</h3>
+            <ul>
+                <li><strong>title:</strong> {{title}}</li>
+                <li><strong>slug:</strong> {{slug}}</li>
+                <li><strong>id:</strong> {{id}}</li>
+                <li><strong>url:</strong> {{url}}</li>
+            </ul>
+
+            <h3>Content Properties:</h3>
+            <ul>
+                <li><strong>content exists:</strong> {{#if content}}YES{{else}}NO{{/if}}</li>
+                <li><strong>html exists:</strong> {{#if html}}YES{{else}}NO{{/if}}</li>
+                <li><strong>excerpt exists:</strong> {{#if excerpt}}YES{{else}}NO{{/if}}</li>
+                <li><strong>custom_excerpt exists:</strong> {{#if custom_excerpt}}YES{{else}}NO{{/if}}</li>
+            </ul>
+
+            <h3>Content Preview:</h3>
+            <div style="border: 1px solid #ccc; padding: 1rem; margin: 1rem 0;">
+                <h4>Using content:</h4>
+                {{#if content}}
+                    {{{content}}}
+                {{else}}
+                    <em>Content is undefined or empty</em>
+                {{/if}}
+            </div>
+
+            <div style="border: 1px solid #ccc; padding: 1rem; margin: 1rem 0;">
+                <h4>Using html:</h4>
+                {{#if html}}
+                    {{{html}}}
+                {{else}}
+                    <em>HTML is undefined or empty</em>
+                {{/if}}
+            </div>
+
+            <div style="border: 1px solid #ccc; padding: 1rem; margin: 1rem 0;">
+                <h4>Available context keys:</h4>
+                <pre>{{#each this}}{{@key}}: {{this}}
+{{/each}}</pre>
+            </div>
+        </section>
+    </article>
+</div>
