@@ -73,19 +73,7 @@
             {{/foreach}}
         </div>
 
-        {{!-- Load More Button --}}
-        {{#if pagination.next}}
-            <div class="load-more-container">
-                <button class="load-more-btn"
-                        data-next-page="{{pagination.next}}"
-                        id="load-more-btn">
-                    Load More Posts
-                </button>
-                <div class="loading-spinner hidden" id="loading-spinner">
-                    <div class="spinner"></div>
-                </div>
-            </div>
-        {{/if}}
+        {{pagination}}
     </section>
 
     {{!-- Subscribe Section --}}

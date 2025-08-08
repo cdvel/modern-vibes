@@ -470,6 +470,39 @@
         }
     }
 
+    // Navigation Active State Class
+    class NavigationActiveState {
+        constructor() {
+            this.init();
+        }
+
+        init() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Remove all current classes first
+            navLinks.forEach(link => link.classList.remove('current'));
+            
+            // Determine which nav item should be active
+            if (currentPath === '/' || currentPath === '') {
+                this.setActive('home');
+            } else if (currentPath.includes('/notes')) {
+                this.setActive('notes');
+            } else if (currentPath.includes('/about')) {
+                this.setActive('about');
+            } else if (currentPath.includes('/now')) {
+                this.setActive('now');
+            }
+        }
+
+        setActive(navType) {
+            const activeLink = document.querySelector(`[data-nav="${navType}"]`);
+            if (activeLink) {
+                activeLink.classList.add('current');
+            }
+        }
+    }
+
     // Initialize everything when DOM is loaded
     document.addEventListener('DOMContentLoaded', () => {
         new ViewToggle();
@@ -479,6 +512,7 @@
         new SmoothScroll();
         new CodeHighlighter();
         new TableOfContents();
+        new NavigationActiveState();
     });
 
     // Handle page visibility changes

@@ -1,14 +1,14 @@
 {
-  "name": "modern-personal-theme",
-  "description": "A clean, sleek, and modern Ghost theme for personal sites with grid/list toggle and lazy loading",
-  "version": "1.0.0",
+  "name": "modern-vibes",
+  "description": "A clean, sleek, and modern Ghost theme with great vibes - featuring grid/list toggle and smooth interactions",
+  "version": "1.1.0",
   "engines": {
     "ghost": ">=5.0.0"
   },
   "license": "MIT",
   "author": {
-    "name": "Modern Personal Theme",
-    "email": "hello@example.com"
+    "name": "CD Velandia",
+    "email": "cesar@velandia.co"
   },
   "keywords": [
     "ghost",
@@ -16,7 +16,9 @@
     "personal",
     "blog",
     "modern",
-    "clean"
+    "vibes",
+    "clean",
+    "responsive"
   ],
   "config": {
     "posts_per_page": 12,
