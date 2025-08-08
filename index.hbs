@@ -23,8 +23,8 @@
                     <div class="post-image">
                         <a href="{{url}}">
                             {{#if feature_image}}
-                                <img src="{{img_url feature_image size="m"}}" 
-                                     alt="{{title}}" 
+                                <img src="{{img_url feature_image size="m"}}"
+                                     alt="{{title}}"
                                      loading="lazy"
                                      class="post-feature-image">
                             {{else}}
@@ -32,17 +32,17 @@
                             {{/if}}
                         </a>
                     </div>
-                    
+
                     <div class="post-content">
                         <header class="post-header">
                             {{#if primary_tag}}
                                 <span class="post-tag">{{primary_tag.name}}</span>
                             {{/if}}
-                            
+
                             <h2 class="post-title">
                                 <a href="{{url}}">{{title}}</a>
                             </h2>
-                            
+
                             <div class="post-meta">
                                 <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
                                     {{date format="MMM DD, YYYY"}}
@@ -50,7 +50,7 @@
                                 {{#if reading_time}}<span class="post-reading-time">{{reading_time}}</span>{{/if}}
                             </div>
                         </header>
-                        
+
                         <div class="post-excerpt">
                             <p>
                                 {{#if excerpt}}
@@ -64,7 +64,7 @@
                                 {{/if}}
                             </p>
                         </div>
-                        
+
                         <footer class="post-footer">
                             <a href="{{url}}" class="read-more">Read more →</a>
                         </footer>
@@ -76,7 +76,7 @@
         {{!-- Load More Button --}}
         {{#if pagination.next}}
             <div class="load-more-container">
-                <button class="load-more-btn" 
+                <button class="load-more-btn"
                         data-next-page="{{pagination.next}}"
                         id="load-more-btn">
                     Load More Posts
@@ -94,7 +94,7 @@
             <div class="subscribe-content">
                 <h3 class="subscribe-title">Stay updated</h3>
                 <p class="subscribe-description">Get the latest posts delivered right to your inbox.</p>
-                
+
                 {{!-- Ghost Native Subscribe Form --}}
                 <div class="subscribe-form-container">
                     {{#if @member}}
@@ -102,10 +102,10 @@
                     {{else}}
                         <form class="subscribe-form" data-members-form="subscribe">
                             <div class="form-group">
-                                <input class="subscribe-email" 
-                                       type="email" 
-                                       name="email" 
-                                       placeholder="Your email address" 
+                                <input class="subscribe-email"
+                                       type="email"
+                                       name="email"
+                                       placeholder="Your email address"
                                        required>
                                 <button class="subscribe-btn" type="submit">
                                     <span class="subscribe-btn-content">Subscribe</span>
@@ -115,7 +115,7 @@
                                 </button>
                             </div>
                             <div class="subscribe-success hidden">
-                                <p>Great! Check your inbox and click the link to confirm your subscription.</p>
+                                <p>Great! Check your inbox (or spam folder) and click the link to confirm your subscription.</p>
                             </div>
                             <div class="subscribe-error hidden">
                                 <p>Please enter a valid email address!</p>

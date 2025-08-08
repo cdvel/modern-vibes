@@ -19,7 +19,7 @@
     "clean"
   ],
   "config": {
-    "posts_per_page": 9,
+    "posts_per_page": 12,
     "custom": {
       "navigation_layout": {
         "type": "select",

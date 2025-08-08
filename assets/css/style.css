@@ -207,6 +207,7 @@ a:has(img) {
 
 .site-nav {
   text-align: center;
+  margin-top: var(--space-md);
 }
 
 .nav-list {
@@ -283,7 +284,7 @@ a:has(img) {
   display: flex;
   gap: var(--space-md);
   align-items: stretch;
-  min-height: 120px;
+  min-height: 80px;
 }
 
 .posts-container.list-layout .post-image {
@@ -308,10 +309,10 @@ a:has(img) {
 
 .posts-container.list-layout .post-content {
   flex: 1;
-  padding: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
   display: flex;
   flex-direction: column;
-  min-height: 120px;
+  min-height: 80px;
 }
 
 /* Post Cards
@@ -341,7 +342,7 @@ a:has(img) {
 /* Default thumbnail for posts without images */
 .post-image-placeholder {
   width: 100%;
-  height: 160px;
+  height: 120px;
   background: linear-gradient(135deg, var(--color-highlight) 0%, var(--color-accent) 100%);
   display: flex;
   align-items: center;
@@ -361,7 +362,7 @@ a:has(img) {
 
 .post-feature-image {
   width: 100%;
-  height: 160px;
+  height: 120px;
   object-fit: cover;
   object-position: center;
   transition: transform var(--transition-normal);
@@ -372,7 +373,7 @@ a:has(img) {
 }
 
 .post-content {
-  padding: var(--space-sm) var(--space-md) var(--space-sm);
+  padding: var(--space-xs) var(--space-md) var(--space-xs);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -797,6 +798,49 @@ a:has(img) {
   gap: var(--space-md);
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.footer-social ul.social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-social ul.social li {
+  display: inline-block;
+}
+
+.footer-social ul.social li a {
+  color: var(--color-text-light);
+  font-size: 1.2rem;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.footer-social ul.social li a:hover {
+  color: var(--color-accent);
+}
+
+.footer-social ul.social li a img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .social-link {

@@ -5,7 +5,7 @@
     <div class="toc-container">
         <div class="toc" id="toc"></div>
     </div>
-    
+
     {{#post}}
     <article class="post">
         <header class="post-full-header">
@@ -108,7 +108,7 @@
             <div class="subscribe-content">
                 <h3 class="subscribe-title">Never miss a post</h3>
                 <p class="subscribe-description">Stay updated with new content delivered to your inbox.</p>
-                
+
                 {{!-- Ghost Native Subscribe Form --}}
                 <div class="subscribe-form-container">
                     {{#if @member}}
@@ -116,10 +116,10 @@
                     {{else}}
                         <form class="subscribe-form" data-members-form="subscribe">
                             <div class="form-group">
-                                <input class="subscribe-email" 
-                                       type="email" 
-                                       name="email" 
-                                       placeholder="Your email address" 
+                                <input class="subscribe-email"
+                                       type="email"
+                                       name="email"
+                                       placeholder="Your email address"
                                        required>
                                 <button class="subscribe-btn" type="submit">
                                     <span class="subscribe-btn-content">Subscribe</span>
@@ -129,7 +129,7 @@
                                 </button>
                             </div>
                             <div class="subscribe-success hidden">
-                                <p>Great! Check your inbox and click the link to confirm your subscription.</p>
+                                <p>Great! Check your inbox (or spam folder) and click the link to confirm your subscription.</p>
                             </div>
                             <div class="subscribe-error hidden">
                                 <p>Please enter a valid email address!</p>

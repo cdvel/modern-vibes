@@ -8,7 +8,7 @@
 
     // Configuration
     const CONFIG = {
-        postsPerPage: 9,
+        postsPerPage: 12,
         animationDuration: 300,
         debounceDelay: 100
     };
