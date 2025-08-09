@@ -888,7 +888,7 @@ a:has(img) {
   border-color: var(--color-accent); */
   color: var(--color-accent);
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .pagination .page-number.current {
