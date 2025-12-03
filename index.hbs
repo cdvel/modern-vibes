@@ -19,7 +19,7 @@
         {{!-- Posts Grid/List --}}
         <div class="posts-container grid-layout" id="posts-container">
             {{#foreach posts}}
-                <article class="post-card" data-post-id="{{id}}">
+                <article class="post-card" data-post-id="{{id}}" data-post-content="{{content}}">
                     <div class="post-image">
                         <a href="{{url}}">
                             {{#if feature_image}}

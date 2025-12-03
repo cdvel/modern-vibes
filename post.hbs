@@ -76,7 +76,7 @@
                     <div class="read-next-posts">
                         {{#foreach related_posts}}
                             {{#if @index}}
-                                <article class="read-next-card">
+                                <article class="read-next-card" data-post-content="{{content}}">
                                     <div class="read-next-card-image">
                                         <a href="{{url}}">
                                             {{#if feature_image}}
