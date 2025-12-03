@@ -67,8 +67,20 @@
         init() {
             if (!this.container || !this.gridBtn || !this.listBtn) return;
 
-            // Load saved preference
-            this.currentView = localStorage.getItem('viewPreference') || 'grid';
+            // Check if we're on index or /books page
+            const path = window.location.pathname;
+            const isIndexPage = path === '/' || path === '/index' || path === '/index.html';
+            const isBooksPage = path.includes('/books') || path.includes('/tag/book');
+
+            // Determine default view based on page
+            let defaultView = 'grid';
+            if (isIndexPage || isBooksPage) {
+                defaultView = 'list';
+            }
+
+            // Load saved preference or use page-specific default
+            const savedPreference = localStorage.getItem('viewPreference');
+            this.currentView = savedPreference || defaultView;
             this.setView(this.currentView);
 
             // Event listeners

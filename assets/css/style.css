@@ -306,6 +306,7 @@ a.kg-bookmark-container {
 
 .posts-container.list-layout .post-image a {
   display: block;
+  width: 100%;
   height: 100%;
 }
 
@@ -316,6 +317,7 @@ a.kg-bookmark-container {
   object-fit: cover;
   object-position: center;
 }
+
 
 .posts-container.list-layout .post-content {
   flex: 1;
@@ -347,6 +349,7 @@ a.kg-bookmark-container {
   position: relative;
   overflow: hidden;
   background-color: var(--color-surface);
+  height: 200px;
 }
 
 /* Default thumbnail for posts without images */
@@ -377,6 +380,7 @@ a.kg-bookmark-container {
   object-position: center;
   transition: transform var(--transition-normal);
 }
+
 
 .post-card:hover .post-feature-image {
   transform: scale(1.05);
@@ -1313,13 +1317,15 @@ blockquote cite:before {
   opacity: 0.5;
 }
 
-/* Ensure external images respect container dimensions */
-.post-image img[src^="http"],
-.post-image img[src^="//"] {
+/* Ensure all images respect container dimensions consistently */
+.post-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
+
 
 /* Hide the external image marker comment from rendered content */
 .post-content:has(comment),

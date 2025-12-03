@@ -1,7 +1,7 @@
 {
   "name": "modern-vibes",
   "description": "A clean, sleek, and modern Ghost theme with great vibes - featuring grid/list toggle and smooth interactions",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "engines": {
     "ghost": ">=5.0.0"
   },
