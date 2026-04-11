@@ -20,18 +20,18 @@
         <div class="posts-container grid-layout" id="posts-container">
             {{#foreach posts}}
                 <article class="post-card" data-post-id="{{id}}">
+                    {{#unless @custom.hide_post_thumbnails}}
+                    {{#if feature_image}}
                     <div class="post-image">
                         <a href="{{url}}">
-                            {{#if feature_image}}
-                                <img src="{{img_url feature_image size="m"}}"
-                                     alt="{{title}}"
-                                     loading="lazy"
-                                     class="post-feature-image">
-                            {{else}}
-                                <div class="post-image-placeholder" title="{{title}}"></div>
-                            {{/if}}
+                            <img src="{{img_url feature_image size="m"}}"
+                                 alt="{{title}}"
+                                 loading="lazy"
+                                 class="post-feature-image">
                         </a>
                     </div>
+                    {{/if}}
+                    {{/unless}}
 
                     <div class="post-content">
                         <header class="post-header">
@@ -53,21 +53,14 @@
 
                         <div class="post-excerpt">
                             <p>
-                                {{#if excerpt}}
+                                {{#if custom_excerpt}}
+                                    {{custom_excerpt}}
+                                {{else if excerpt}}
                                     {{excerpt words="30"}}
-                                {{else}}
-                                    {{#if custom_excerpt}}
-                                        {{custom_excerpt}}
-                                    {{else}}
-                                        Read more about {{title}}...
-                                    {{/if}}
                                 {{/if}}
                             </p>
                         </div>
 
-                        <footer class="post-footer">
-                            <a href="{{url}}" class="read-more">Read more →</a>
-                        </footer>
                     </div>
                 </article>
             {{/foreach}}

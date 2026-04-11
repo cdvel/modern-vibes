@@ -67,8 +67,6 @@
         init() {
             if (!this.container || !this.gridBtn || !this.listBtn) return;
 
-            // Load saved preference
-            this.currentView = localStorage.getItem('viewPreference') || 'grid';
             this.setView(this.currentView);
 
             // Event listeners
