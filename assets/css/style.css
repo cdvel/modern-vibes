@@ -262,7 +262,7 @@ a:has(img) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--space-xs);
-  align-items: start;
+  align-items: stretch;
 }
 
 .posts-container.list-layout {
@@ -317,7 +317,7 @@ a:has(img) {
   border: 0px solid var(--color-border);
   display: flex;
   flex-direction: column;
-  min-height: calc(1.6rem * 1.3 * 3 + var(--space-xl));
+  height: 100%;
 }
 
 .post-card:hover {
@@ -366,7 +366,7 @@ a:has(img) {
 }
 
 .post-content {
-  padding: var(--space-sm) var(--space-md) var(--space-sm);
+  padding: var(--space-sm) var(--space-md) var(--space-xs);
   display: flex;
   flex-direction: column;
   flex: 1;
