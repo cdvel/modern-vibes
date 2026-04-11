@@ -261,8 +261,8 @@ a:has(img) {
 .posts-container.grid-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--space-sm);
-  align-items: stretch;
+  gap: var(--space-xs);
+  align-items: start;
 }
 
 .posts-container.list-layout {
@@ -317,7 +317,7 @@ a:has(img) {
   border: 0px solid var(--color-border);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: calc(1.6rem * 1.3 * 3 + var(--space-xl));
 }
 
 .post-card:hover {
@@ -356,6 +356,7 @@ a:has(img) {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  filter: grayscale(100%) contrast(1.1);
   object-position: center;
   transition: transform var(--transition-normal);
 }
@@ -377,10 +378,12 @@ a:has(img) {
   color: var(--color-accent);
   padding: 0.25rem 0.5rem;
   border-radius: var(--border-radius);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
   margin-bottom: 0.375rem;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .post-title {
@@ -413,6 +416,7 @@ a:has(img) {
 }
 
 .post-excerpt {
+  display: none;
   color: var(--color-text-light);
   margin-bottom: var(--space-sm);
   font-size: 0.9rem;
@@ -600,11 +604,10 @@ a:has(img) {
 }
 
 .read-next-card {
-  background-color: var(--color-surface);
+  background-color: var(--color-background);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-  border: 1px solid var(--color-border);
 }
 
 .read-next-card:hover {
@@ -641,6 +644,7 @@ a:has(img) {
 .read-next-card-title a {
   color: var(--color-primary);
   text-decoration: none;
+  border-bottom: none;
 }
 
 .read-next-card-title a:hover {
