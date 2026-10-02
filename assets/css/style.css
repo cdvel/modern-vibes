@@ -1093,13 +1093,21 @@ pre:hover .copy-code-btn {
   }
 
   .header-content {
-    flex-direction: column;
-    text-align: center;
+    align-items: center;
     gap: var(--space-sm);
   }
 
-  .site-branding {
-    text-align: center;
+  .site-avatar {
+    margin-top: 0;
+  }
+
+  .site-avatar-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .site-title a {
+    font-size: 1.5rem;
   }
 
   .nav-list {
